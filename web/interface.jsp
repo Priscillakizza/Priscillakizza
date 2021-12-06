@@ -10,7 +10,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style> body {background-color: powderblue;
+            width : 500px;
+            padding : 50px;
+            }
+            h1 {color: red;}
+            form {
+                text-align: center;
+                width : 500px;
+            padding : 50px;
+             border-radius: 12px;   
+            }
+            
         
+                    </style>
     </head>
     <body>
         <h1>VACCINATION TRACKER</h1>

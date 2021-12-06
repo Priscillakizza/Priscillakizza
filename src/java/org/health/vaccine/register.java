@@ -23,7 +23,13 @@ public class register extends SimpleTagSupport {
     private String table;
     private String values;
 
-    
+    public void setTable(String table) {
+        this.table = table;
+    }
+
+    public void setValues(String values) {
+        this.values = values;
+    } 
     @Override
     public void doTag() throws JspException {
         JspWriter out = getJspContext().getOut();
@@ -31,17 +37,21 @@ public class register extends SimpleTagSupport {
         
         try{
             try{
-            Class.forName ("com.mysql.jd.bc.Driver");
+            Class.forName ("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccination" , "root" , "");
             Statement s = con.createStatement();
             
             String[] newValues = values.split(",");
+           
             if(newValues.length>1){
                 
-                int x = s.executeUpdate("insert into vaccination ( type_of_vaccine , number_of_vaccine "
-                        + " date_of_arrival , inventory_status) values ( '"+ newValues[0] +" ' , '"+ newValues[1] +" ' , '"+ newValues[2] +" '"
-                                + "'"+ newValues[3] +" '" );
+                 s.execute("insert into " +table+ " ( type_of_vaccine,number_of_vaccine,date_of_arrival,inventory_status) values ( '"+ newValues[0] +" ' , '"+ newValues[1] +" ' , '"+ newValues[2] +"','"+ newValues[3] +" ');" );
                 
+                 
+                 out.println(newValues[0]);
+             out.println(newValues[1]);
+              out.println(newValues[2]);
+              out.println(newValues[3]);
                 out.println ("Vaccine successfully inserted");
             }
         }
@@ -68,18 +78,8 @@ public class register extends SimpleTagSupport {
             // out.println("    </blockquote>");
          
 
-    /**
-     *
-     * @param table
-     *        
-     */
-    public void setTable(String table) {
-        this.table = table;
-    }
-
-    public void setValues(String values) {
-        this.values = values;
-    }
+    
+   
     
 }
         

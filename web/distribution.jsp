@@ -9,27 +9,27 @@
 <%@page import = "java.sql.*,java.uti1.*"%>
 
 
-<% 
-String name_of_hosital = request.getParameter(" name_of_hosital");
-String vaccine_type = request.getParameter("vaccine_type");
-String amount_of_vaccines = request.getParameter(" amount_of_vaccines");
-
-
-%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Distribution Page</title>
+         <style> body { background-color : pink ;}
+            h1 {color : blue;}
+            input {
+              width : 100%;
+            padding : 10px;
+            box-sizing: border-box;
+            }
+            </style>
     </head>
-    
+    <body>
         <%@taglib uri = "/WEB-INF/tlds/registering.tld" prefix="motoro"%>
-        <motoro:distribute table= "healthcentre_distribution" values="${name_of_hosital},${vaccine_type}, 
-                           ${amount_of_vaccines}" />
+        
         
        <h1> the amount of vaccines distributed per hospital </h1>
         <h1>health center distribution</h1>
-         <form  METHOD = "post" action="/Moto/VaccineRegister"> 
+         <form  METHOD = "post" action="/Moto/HealthCenter"> 
           Health center:  <input type="text" name="name_of_hospital"/>
             <br/> 
        Type of vaccine: <input type="text" name="vaccine_type" />
@@ -39,5 +39,15 @@ String amount_of_vaccines = request.getParameter(" amount_of_vaccines");
         
         <input type="submit" value="register"/>
         </form>
-    
+        
+<% 
+String name_of_hosital = request.getParameter(" name_of_hosital");
+String vaccine_type = request.getParameter("vaccine_type");
+String amount_of_vaccines = request.getParameter(" amount_of_vaccines");
+
+
+%>
+<motoro:distribute table= "healthcentre_distribution" values="${name_of_hosital},${vaccine_type}, 
+                           ${amount_of_vaccines}" />
+    </body>   
 </html>

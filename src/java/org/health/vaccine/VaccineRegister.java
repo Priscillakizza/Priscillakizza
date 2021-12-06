@@ -31,10 +31,7 @@ public class VaccineRegister extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String typeOfVaccine = request.getParameter("type_of_vaccine");
-        String numberOfVaccine = request.getParameter("number_of_vaccine");   
-       String dateOfArrival = request.getParameter("date_of_arrival");
-        String InventoryStatus  = request.getParameter("inventory_status");
+        
         
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -45,14 +42,19 @@ public class VaccineRegister extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
+            String typeOfVaccine = request.getParameter("type_of_vaccine");
+            String numberOfVaccine = request.getParameter("number_of_vaccine");   
+            String dateOfArrival = request.getParameter("date_of_arrival");
+            String InventoryStatus  = request.getParameter("inventory_status");
+            
             request.setAttribute("type_of_vaccine",typeOfVaccine);
             request.setAttribute("number_of_vaccine",numberOfVaccine);
-              request.setAttribute("date_of_arrival",dateOfArrival);
-                request.setAttribute("inventory_status",InventoryStatus);
+            request.setAttribute("date_of_arrival",dateOfArrival);
+            request.setAttribute("inventory_status",InventoryStatus);
                 
                 
-            RequestDispatcher req = request.getRequestDispatcher("registration");
-            req.forward(request,response);
+            RequestDispatcher res = request.getRequestDispatcher("./registration.jsp");
+            res.forward(request, response);
             
             out.println("<h1>Servlet VaccineRegister at " + request.getContextPath() + "</h1>");
             out.println("</body>");

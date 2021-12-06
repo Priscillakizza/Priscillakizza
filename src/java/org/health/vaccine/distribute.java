@@ -20,7 +20,15 @@ public class distribute extends SimpleTagSupport {
 
     private String table;
     private String values;
+    
+public void setTable(String table) {
+        this.table = table;
+    }
 
+    public void setValues(String values) {
+        this.values = values;
+    }
+    
     /**
      * Called by the container to invoke this tag. The implementation of this
      * method is provided by the tag library developer, and handles all tag
@@ -37,15 +45,13 @@ public class distribute extends SimpleTagSupport {
             // out.println("<strong>" + attribute_1 + "</strong>");
             // out.println("    <blockquote>");
 try{ 
- Class.forName ("com.mysql.jd.bc.Driver");
+ Class.forName ("com.mysql.jdbc.Driver");
  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccination" , "root" , "");
  Statement s = con.createStatement();
   
  String[] nnewvalues = values.split(",");
  if (nnewvalues.length>1){
- int x = s.executeUpdate("insert into hospital_distribution (  name_of_hosital , vaccine_type "
- + " date_of_arrival) values ( '"+  nnewvalues[0] +" ' , '"+ nnewvalues[1] +" ' , '"+ nnewvalues[2] +" '"
- + "'" );
+ s.executeUpdate("insert into "+table+"(  name_of_hosital , vaccine_type , date_of_arrival) values ( '"+  nnewvalues[0] +" ' , '"+ nnewvalues[1] +" ' , '"+ nnewvalues[2]+"'); " );
  
  out.println ("information successfully registered");
  
@@ -70,12 +76,5 @@ try{
         }
     }
 
-    public void setTable(String table) {
-        this.table = table;
-    }
-
-    public void setValues(String values) {
-        this.values = values;
-    }
     
 }
