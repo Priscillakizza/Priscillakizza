@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADMIN
  */
-public class HealthCenter extends HttpServlet {
+public class healthdisplayservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,36 +30,19 @@ public class HealthCenter extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-         
-        
-       
         try ( PrintWriter out = response.getWriter()) {
-            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HealthCenter</title>");            
+            out.println("<title>Servlet healthdisplayservlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            
-            String HealthCenter = request.getParameter("name_of_hospital");
-        String VaccineType = request.getParameter("vaccine_type");   
-       String NumberGiven = request.getParameter("amount_of_vaccines");
-        
-            
-            request.setAttribute("name_of_hospital", HealthCenter);
-            request.setAttribute("vaccine_type",VaccineType);
-              request.setAttribute("amount_of_vaccines",NumberGiven );
-              
-               RequestDispatcher req = request.getRequestDispatcher("./distribution.jsp");
-            req.forward(request,response);
-            
-              
-            out.println("<h1>Servlet HealthCenter at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet healthdisplayservlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+ RequestDispatcher res = request.getRequestDispatcher("./healthdisplay.jsp");
+            res.forward(request, response);
         }
     }
 

@@ -45,6 +45,7 @@
         <li class="nav-item">
         Vaccine Inventory:  <a class="nav-link" href="/Moto/registration">Vaccine Registration</a>
         <a class="nav-link" href="/Moto/distribution">HealthCenter Distribution</a>
+        <a class="nav-link" href="/Moto/display">Displaying vaccine registration table</a>
         </li>
         <li class="nav-item">
           Vaccine Administration<a class="nav-link " href="#" >Vaccine Administration</a>

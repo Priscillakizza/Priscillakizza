@@ -52,7 +52,10 @@ try{
  String[] nnewvalues = values.split(",");
  if (nnewvalues.length>1){
  s.executeUpdate("insert into "+table+"(  name_of_hosital , vaccine_type , date_of_arrival) values ( '"+  nnewvalues[0] +" ' , '"+ nnewvalues[1] +" ' , '"+ nnewvalues[2]+"'); " );
- 
+              
+             out.println(nnewvalues[0]);
+             out.println(nnewvalues[1]);
+              out.println(nnewvalues[2]); 
  out.println ("information successfully registered");
  
     }

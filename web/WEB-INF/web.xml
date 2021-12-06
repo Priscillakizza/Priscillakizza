@@ -8,6 +8,14 @@
         <servlet-name>HealthCenter</servlet-name>
         <servlet-class>org.health.vaccine.HealthCenter</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>displayvaccine</servlet-name>
+        <servlet-class>org.health.vaccine.displayvaccine</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>healthdisplayservlet</servlet-name>
+        <servlet-class>org.health.vaccine.healthdisplayservlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VaccineRegister</servlet-name>
         <url-pattern>/VaccineRegister</url-pattern>
@@ -32,7 +40,7 @@
         <servlet-name>HealthCenter</servlet-name>
         <url-pattern>/HealthCenter</url-pattern>
     </servlet-mapping>
-     <servlet>
+    <servlet>
         <servlet-name>interface</servlet-name>
         <jsp-file>/interface.jsp</jsp-file>
     </servlet>
@@ -47,6 +55,22 @@
     <servlet-mapping>
         <servlet-name>report</servlet-name>
         <url-pattern>/report</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>display</servlet-name>
+        <jsp-file>/display.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>display</servlet-name>
+        <url-pattern>/display</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>displayvaccine</servlet-name>
+        <url-pattern>/displayvaccine</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>healthdisplayservlet</servlet-name>
+        <url-pattern>/healthdisplayservlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

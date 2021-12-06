@@ -70,4 +70,50 @@
       <type>java.lang.String</type>
     </attribute>
   </tag>
+  <tag>
+    <name>displaying</name>
+    <tag-class>org.health.vaccine.displaying</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+    <attribute>
+      <name>where</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+    <attribute>
+      <name>displayformat</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+  </tag>
+  <tag>
+    <name>healthcenterdisplay</name>
+    <tag-class>org.health.vaccine.healthcenterdisplay</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+    <attribute>
+      <name>where</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+    <attribute>
+      <name>displayformat</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+  </tag>
 </taglib>
